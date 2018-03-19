@@ -90,10 +90,8 @@ void Dialog::OnDialogResponse(int playerid, int dialogid, int response, int list
 			amx_Push(iter.amx, response);
 			amx_Push(iter.amx, dialogid);
 			amx_Push(iter.amx, playerid);
-			amx_PushString(iter.amx, &dialog_addr, nullptr, dialog_iter->second.dialog.c_str(), NULL, NULL);
 			amx_Exec(iter.amx, &retval, iter._on_dialog_response.id);
 			amx_Release(iter.amx, addr_params);
-			amx_Release(iter.amx, dialog_addr);
 		}
 
 		if ((dialog_iter = iter._dialog_map.find(playerid)) != iter._dialog_map.end()) {
