@@ -50,8 +50,6 @@ void Hook::UnInit()
 
 int THISCALL Hook::HOOK_OnDialogResponse(void *_this, int playerid, int dialogid, int response, int listitem, char *inputtext)
 {
-	if (dialogid == 32700) {
-		Dialog::OnDialogResponse(playerid, dialogid, response, listitem, inputtext);
-	}
+	Dialog::OnDialogResponse(playerid, dialogid, response, listitem, inputtext);
 	return 1;
 }
