@@ -82,7 +82,6 @@ void Dialog::OnDialogResponse(int playerid, int dialogid, int response, int list
 
 	Dialog::DialogMap::const_iterator dialog_iter;
 	cell addr_params, dialog_addr, retval = -1;
-	
 	for (const auto &iter : _amx_list) {
 		if (iter._on_dialog_response.exists) {
 			amx_PushString(iter.amx, &addr_params, nullptr, inputtext, NULL, NULL);
@@ -112,10 +111,8 @@ void Dialog::OnDialogResponse(int playerid, int dialogid, int response, int list
 			amx_Push(iter.amx, listitem);
 			amx_Push(iter.amx, response);
 			amx_Push(iter.amx, playerid);
-			amx_PushString(iter.amx, &dialog_addr, nullptr, dialog_iter->second.dialog.c_str(), NULL, NULL);
 			amx_Exec(iter.amx, &retval, dialog_iter->second.funcidx);
 			amx_Release(iter.amx, addr_params);
-			amx_Release(iter.amx, dialog_addr);
 		}
 
 		if (iter._on_dialog_performed.exists) {
