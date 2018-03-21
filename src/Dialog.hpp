@@ -19,7 +19,7 @@ public:
 	using DialogMap = unordered_map<int, DialogMapItem>;
 	using AmxList = list<AmxListItem>;
 	
-	struct Callbacks {
+	struct Callback {
 		bool exists;
 		int id;
 	};
@@ -33,7 +33,7 @@ public:
 	{
 		AMX *amx;
 		DialogMap _dialog_map;
-		Callbacks _on_dialog_performed, _on_dialog_received, _on_dialog_response;
+		Callback _on_dialog_performed, _on_dialog_received, _on_dialog_response;
 	};
 
 	static void Init(AMX *amx);

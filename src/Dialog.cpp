@@ -4,8 +4,6 @@ typedef void(*logprintf_t)(char* format, ...);
 extern logprintf_t logprintf;
 
 Dialog::AmxList _amx_list;
-Dialog::Callbacks _on_dialog_received, _on_dialog_performed;
-
 bool gFix_Enabled = false;
 
 void Dialog::Init(AMX *amx)
