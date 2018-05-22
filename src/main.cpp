@@ -47,6 +47,7 @@ PLUGIN_EXPORT bool PLUGIN_CALL Load(void **ppData)
 
 PLUGIN_EXPORT void PLUGIN_CALL Unload()
 {
+	Hook::UnInit();
 	logprintf("Dialog plugin v0.8 unloaded");
 }
 
@@ -56,7 +57,7 @@ PLUGIN_EXPORT void PLUGIN_CALL AmxLoad(AMX *amx)
 	Natives::RegisterNatives(amx);
 }
 
-PLUGIN_EXPORT void PLUGIN_CALL AmxUnload(AMX *amx)
+PLUGIN_EXPORT int PLUGIN_CALL AmxUnload(AMX *amx)
 {
-	Hook::UnInit();
+	return AMX_ERR_NONE;
 }
