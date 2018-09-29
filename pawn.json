@@ -1,0 +1,23 @@
+{
+    "user": "KashCherry",
+    "repo": "Dialog-plugin",
+    "resources": [
+        {
+            "name": "^dialog-(.*)-linux.tar.gz$",
+            "platform": "linux",
+            "archive": true,
+            "includes": ["dialog-(.*)-linux.tar/./dialog-(.*)-linux"],
+            "plugins": ["dialog-(.*)-linux.tar/./dialog-(.*)-linux/dialog.so"]
+        },
+        {
+            "name": "^dialog-(.*)-win32.zip$",
+            "platform": "windows",
+            "archive": true,
+            "includes": ["dialog-(.*)-win32"],
+            "plugins": ["dialog-(.*)-win32/dialog.dll"]
+        }
+    ],
+    "runtime": {
+        "plugins": ["KashCherry/Dialog-plugin"]
+    }
+}
